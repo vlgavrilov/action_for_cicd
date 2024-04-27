@@ -51,6 +51,12 @@ async function main() {
   // app.use('/microservice', microServiceRouter);
   // app.use(staticRouter);
 
+
+
+
+
+
+
   app.use('/v1', router);
 
   // runSocketServer(httpServer, app);
