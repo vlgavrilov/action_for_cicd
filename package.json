@@ -1,0 +1,20 @@
+{
+  "name": "action_for_cicd",
+  "version": "1.0.0",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "eetase": "^7.0.1",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "http-status": "^1.7.4"
+  },
+  "scripts": {
+    "start": "node src/app.js",
+    "lint": "eslint --config .eslintrc.js src/"
+  },
+  "devDependencies": {
+    "eslint": "8.22.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-node": "^11.1.0"
+  }
+}
