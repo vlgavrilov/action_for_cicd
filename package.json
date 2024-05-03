@@ -10,11 +10,14 @@
   },
   "scripts": {
     "start": "node src/app.js",
-    "lint": "eslint --config .eslintrc.js src/"
+    "lint": "eslint --config .eslintrc.js src/",
+    "test": "mocha tests/**/*.js"
   },
   "devDependencies": {
+    "chai": "^5.1.0",
     "eslint": "8.22.0",
     "eslint-config-google": "^0.14.0",
-    "eslint-plugin-node": "^11.1.0"
+    "eslint-plugin-node": "^11.1.0",
+    "mocha": "^10.4.0"
   }
 }
