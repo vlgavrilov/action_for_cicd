@@ -10,7 +10,7 @@ permissions: write-all
 
 jobs:
   test:
-    name: Build & Push
+    name: Lint and test
     uses: vlgavrilov/action_for_cicd/.github/workflows/main.yaml@develop
     with:
       environment: dev
