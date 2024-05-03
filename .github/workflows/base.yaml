@@ -33,7 +33,7 @@ jobs:
 
   unit-test:
     runs-on: ubuntu-latest
-    name: Lint with ESLint
+    name: Test with Mocha
     environment: ${{ inputs.environment }}
 
     steps:
@@ -48,7 +48,7 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Lint with ESLint
+      - name: Test with Mocha
         run: npm run test
 
   build_and_push:
