@@ -1,9 +1,21 @@
 name: Main
 
+
 on:
   push:
   pull_request:
   workflow_dispatch:
+  workflow_call:
+    inputs:
+      environment:
+        description: "deploy environment"
+        required: true
+        type: string
+      display_env:
+        description: "display deploy environment"
+        required: false
+        type: string
+
 
 jobs:
   lint:
