@@ -12,7 +12,8 @@ on:
 
 jobs:
   build_and_push:
-    needs: [lint, unit-test]
+    uses: vlgavrilov/action_for_cicd/.github/workflows/base.yaml@main
+
     runs-on: ubuntu-latest
     name: ${{ inputs.display_env || inputs.environment }}
     environment: ${{ inputs.environment }}
