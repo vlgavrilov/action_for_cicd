@@ -18,6 +18,7 @@ jobs:
     secrets: inherit
 
   build_and_deploy:
+    needs: [test]
     name: Build & Push
     uses: vlgavrilov/action_for_cicd/.github/workflows/base.yaml@develop
     with:
