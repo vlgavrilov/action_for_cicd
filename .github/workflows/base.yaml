@@ -12,7 +12,6 @@ on:
 
 jobs:
   build_and_push:
-    uses: vlgavrilov/action_for_cicd/.github/workflows/main.yaml@main
 
     runs-on: ubuntu-latest
     name: ${{ inputs.display_env || inputs.environment }}
