@@ -52,11 +52,6 @@ async function main() {
   // app.use(staticRouter);
 
 
-
-
-
-
-
   app.use('/v1', router);
 
   // runSocketServer(httpServer, app);
