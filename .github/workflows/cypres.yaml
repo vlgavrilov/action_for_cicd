@@ -27,7 +27,7 @@ jobs:
 
       - name: Wait for Docker container to start
         run: |
-          sleep 10
+          sleep 30
           docker ps -a -q -f "name=my-react-app" | xargs docker inspect --format '{{.State.Running}}' | grep -q true || (echo "Docker container is not running" && exit 1)
           curl --fail http://localhost:3000 || (echo "React app is not ready" && exit 1)
 
