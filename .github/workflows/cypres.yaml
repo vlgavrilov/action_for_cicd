@@ -1,4 +1,4 @@
-name: cypres
+name:   cypress
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-and-test:
+  cypress:
     runs-on: ubuntu-latest
 
     services:
@@ -31,7 +31,7 @@ jobs:
           build: npm run build
           start: npm start
           wait-on-timeout: 120
-          record: true
+#          record: true
           parallel: true
           spec: 'cypress/integration/**/*.js'
 
