@@ -27,6 +27,7 @@ jobs:
 
       - name: Wait for Docker container to start
         run: |
+          sleep 10
           docker ps -a -q -f "name=my-react-app" | xargs docker inspect --format '{{.State.Running}}' | grep -q true || (echo "Docker container is not running" && exit 1)
           curl --fail http://localhost:3000 || (echo "React app is not ready" && exit 1)
 
@@ -36,7 +37,7 @@ jobs:
           build: npm run build
           start: npm start
           wait-on-timeout: 120
-          spec: 'cypress/integration/**/*.js'
+          spec: 'cypress/workspace/**/*.js'
 
       - name: Stop Docker container
         run: |
