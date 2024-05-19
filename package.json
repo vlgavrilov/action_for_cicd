@@ -17,6 +17,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "cypress:open": "cypress open",
+    "cypress:open:headless": "cypress run --headless",
     "lint": "eslint --config .eslintrc.js src/"
   },
   "eslintConfig": {
@@ -36,5 +38,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@cypress/code-coverage": "^3.10.0",
+    "@testing-library/cypress": "^9.0.0",
+    "babel-plugin-macros": "^3.1.0",
+    "cypress": "^12.3.0",
+    "eslint-plugin-react": "^7.9.1"
   }
 }

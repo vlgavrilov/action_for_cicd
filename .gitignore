@@ -38,4 +38,3 @@ dist
 uploads/
 downloads/
 .vscode-test
-docker-compose.yml
