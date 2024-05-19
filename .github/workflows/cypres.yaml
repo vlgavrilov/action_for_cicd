@@ -1,0 +1,46 @@
+name: cypres
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    services:
+      docker:
+        image: docker:20.10.12
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build Docker image
+        run: |
+          docker build -t my-react-app:latest .
+
+      - name: Start Docker container
+        run: |
+          docker run -d -p 3000:3000 my-react-app:latest
+
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v6
+        with:
+          build: npm run build
+          start: npm start
+          wait-on-timeout: 120
+          record: true
+          parallel: true
+          spec: 'cypress/integration/**/*.js'
+
+      - name: Stop Docker container
+        run: |
+          docker ps -a -q -f "name=my-react-app" | xargs docker rm -f
+
+      - name: Deploy to production
+        run: |
+          # Add your deployment script here
+          # For example, you can use SSH to connect to your server and pull the latest Docker image
+          # Then, you can stop the current container and start a new one with the latest image
