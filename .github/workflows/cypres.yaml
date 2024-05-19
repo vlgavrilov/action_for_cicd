@@ -32,7 +32,7 @@ jobs:
           start: npm start
           wait-on-timeout: 120
 #          record: true
-          parallel: true
+#          parallel: true
           spec: 'cypress/integration/**/*.js'
 
       - name: Stop Docker container
