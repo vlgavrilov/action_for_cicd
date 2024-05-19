@@ -1,4 +1,4 @@
-name: cypres
+name:   cypress
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-and-test:
+  cypress:
     runs-on: ubuntu-latest
 
     services:
