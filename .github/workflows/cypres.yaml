@@ -23,7 +23,7 @@ jobs:
 
       - name: Start Docker container
         run: |
-          docker run -d -p 3000:3000 my-react-app:latest
+          docker run -d -p 3000:3000 my-react-app:latest --name my-react-app
 
       - name: Wait for Docker container to start
         run: |
