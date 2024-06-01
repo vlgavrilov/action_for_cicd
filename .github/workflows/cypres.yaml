@@ -32,11 +32,14 @@ jobs:
 #          docker ps -a -q -f "name=my-react-app" | xargs docker inspect --format '{{.State.Running}}' | grep -q true || (echo "Docker container is not running" && exit 1)
 #          curl --fail http://localhost:3000 || (echo "React app is not ready" && exit 1)
 
-      - name: Run Cypress tests
+      - name: Copy environment file
+        run: cp src/environments/environments.example.js src/environments/environments.js
+
+      - name: Cypress tests
         uses: cypress-io/github-action@v6
         with:
           build: npm run build
-          install-command: cp src/environments/environments.example.js src/environments/environments.js | npm ci --legacy-peer-deps
+          install-command: npm ci --legacy-peer-deps
           wait-on-timeout: 120
           spec: 'cypress/e2e/**/*.js'
 
