@@ -1,33 +1,33 @@
-on:
-  workflow_call:
-    inputs:
-      environment:
-        description: "deploy environment"
-        required: true
-        type: string
-      display_env:
-        description: "display deploy environment"
-        required: false
-        type: string
-
-jobs:
-  build_and_push:
-    runs-on: ubuntu-latest
-    name: ${{ inputs.display_env || inputs.environment }}
-    environment: ${{ inputs.environment }}
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Lint with ESLint
-        run: npm run lint
-
+#on:
+#  workflow_call:
+#    inputs:
+#      environment:
+#        description: "deploy environment"
+#        required: true
+#        type: string
+#      display_env:
+#        description: "display deploy environment"
+#        required: false
+#        type: string
+#
+#jobs:
+#  build_and_push:
+#    runs-on: ubuntu-latest
+#    name: ${{ inputs.display_env || inputs.environment }}
+#    environment: ${{ inputs.environment }}
+#
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v3
+#
+#      - name: Setup Node.js environment
+#        uses: actions/setup-node@v2
+#        with:
+#          node-version: '16'
+#
+#      - name: Install Dependencies
+#        run: npm ci
+#
+#      - name: Lint with ESLint
+#        run: npm run lint
+#

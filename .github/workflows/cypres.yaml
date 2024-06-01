@@ -46,7 +46,7 @@ jobs:
       - name: Stop Docker container
         run: | 
           docker ps -a |
-          docker ps -a -q -f "name=my-react-app" | xargs docker rm -f
+          docker ps -a -q -f "name=strange_fermat" | xargs docker rm -f
 
       - name: Deploy to production
         run: |

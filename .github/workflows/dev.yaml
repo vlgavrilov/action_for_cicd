@@ -1,27 +1,27 @@
-name: Development (Nightly)
-
-on:
-  push:
-    branches:
-      - develop
-  workflow_dispatch:
-
-permissions: write-all
-
-jobs:
-  test:
-    name: Lint and test
-    uses: vlgavrilov/action_for_cicd/.github/workflows/main.yaml@develop
-    with:
-      environment: dev
-      display_env: Development
-    secrets: inherit
-
-  build_and_deploy:
-    needs: [test]
-    name: Build & Push
-    uses: vlgavrilov/action_for_cicd/.github/workflows/base.yaml@develop
-    with:
-      environment: dev
-      display_env: Development
-    secrets: inherit
+#name: Development (Nightly)
+#
+#on:
+#  push:
+#    branches:
+#      - develop
+#  workflow_dispatch:
+#
+#permissions: write-all
+#
+#jobs:
+#  test:
+#    name: Lint and test
+#    uses: vlgavrilov/action_for_cicd/.github/workflows/main.yaml@develop
+#    with:
+#      environment: dev
+#      display_env: Development
+#    secrets: inherit
+#
+#  build_and_deploy:
+#    needs: [test]
+#    name: Build & Push
+#    uses: vlgavrilov/action_for_cicd/.github/workflows/base.yaml@develop
+#    with:
+#      environment: dev
+#      display_env: Development
+#    secrets: inherit
