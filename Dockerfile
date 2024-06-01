@@ -3,7 +3,6 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-RUN cp src/environments/environments.example.js src/environments/environments.js
 RUN npm run build
 EXPOSE 3000
 CMD ["npm", "start"]
