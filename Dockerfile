@@ -1,5 +1,6 @@
 FROM node:16
 WORKDIR /app
+RUN mkdir -p ./environments
 RUN touch ./environments/environments.js
 COPY package*.json ./
 RUN npm install
