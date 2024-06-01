@@ -41,7 +41,8 @@ jobs:
           spec: 'cypress/e2e/**/*.js'
 
       - name: Stop Docker container
-        run: |
+        run: | 
+          docker ps -a |
           docker ps -a -q -f "name=my-react-app" | xargs docker rm -f
 
       - name: Deploy to production
