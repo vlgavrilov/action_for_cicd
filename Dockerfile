@@ -1,10 +1,9 @@
 FROM node:16
 WORKDIR /app
-RUN mkdir -p ./environments
-RUN touch ./environments/environments.js
 COPY package*.json ./
 RUN npm install
 COPY . .
+RUN touch src/environments/environments.js
 RUN npm run build
 EXPOSE 3000
 CMD ["npm", "start"]
