@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-// import { BASEURL } from './environments/environments';
+import { BASEURL } from './environments/environments';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        {/*{BASEURL}*/}
+        {BASEURL}
         <a
           className="App-link"
           href="https://reactjs.org"
