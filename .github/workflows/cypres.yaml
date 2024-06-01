@@ -40,6 +40,9 @@ jobs:
           wait-on-timeout: 120
           spec: 'cypress/e2e/**/*.js'
 
+      - name: see Docker container
+        run: | 
+          docker ps -a
       - name: Stop Docker container
         run: | 
           docker ps -a |
