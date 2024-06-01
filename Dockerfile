@@ -1,7 +1,6 @@
 FROM node:16
 WORKDIR /app
 RUN touch ./environments/environments.js
-COPY ./environments ./src/environments
 COPY package*.json ./
 RUN npm install
 COPY . .
