@@ -44,12 +44,5 @@ jobs:
         run: | 
           docker ps -a
       - name: Stop Docker container
-        run: | 
-          docker ps -a |
-          docker ps -a -q -f "name=strange_fermat" | xargs docker rm -f
+        run: docker rm -f $(docker ps -a -q)
 
-      - name: Deploy to production
-        run: |
-          # Add your deployment script here
-          # For example, you can use SSH to connect to your server and pull the latest Docker image
-          # Then, you can stop the current container and start a new one with the latest image
